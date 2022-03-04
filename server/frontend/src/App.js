@@ -7,6 +7,19 @@ import ContactUs from './contactus.js';
 Copy the Web Chat code from Watson Assitant and paste it here
 */
 
+  window.watsonAssistantChatOptions = {
+      integrationID: "724eaf50-96ec-45b3-9a4b-774ebf19c2b3", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "606b4b6a-3f9c-43a3-9b35-7066fad06bb9", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+    document.head.appendChild(t);
+  });
+
+
 class App extends React.Component {
 
   state = {
